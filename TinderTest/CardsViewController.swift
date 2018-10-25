@@ -27,7 +27,7 @@ class CardsViewController: UIViewController {
     @IBAction func panImage(_ sender: UIPanGestureRecognizer) {
         
         let location = sender.location(in: view)
-        //let velocity = sender.velocity(in: view)
+        let velocity = sender.velocity(in: view)
         //let translation = sender.translation(in: view)
         
         cardImageView.center = location
@@ -37,6 +37,14 @@ class CardsViewController: UIViewController {
         } else if sender.state == .changed {
             print("Gesture is changing")
         } else if sender.state == .ended {
+            
+            if velocity.x > 0 {
+                print("positive")
+                cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(45 * Double.pi / 180))
+            } else {
+                print("negative")
+                cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(-45 * Double.pi / 180))
+            }
             print("Gesture ended")
         }
         
