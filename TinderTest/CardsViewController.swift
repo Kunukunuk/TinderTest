@@ -26,12 +26,13 @@ class CardsViewController: UIViewController {
     
     @IBAction func panImage(_ sender: UIPanGestureRecognizer) {
         
-        //let location = sender.location(in: view)
+        let location = sender.location(in: view)
         //let velocity = sender.velocity(in: view)
-        let translation = sender.translation(in: view)
+        //let translation = sender.translation(in: view)
+        
+        cardImageView.center = location
         
         if sender.state == .began {
-            
             print("Gesture began")
         } else if sender.state == .changed {
             print("Gesture is changing")
