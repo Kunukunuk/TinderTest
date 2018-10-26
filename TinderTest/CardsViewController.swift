@@ -28,7 +28,7 @@ class CardsViewController: UIViewController {
         
         let location = sender.location(in: view)
         let velocity = sender.velocity(in: view)
-        //let translation = sender.translation(in: view)
+        let translation = sender.translation(in: view)
         
         //cardImageView.center = location
         
@@ -38,7 +38,22 @@ class CardsViewController: UIViewController {
             print("Gesture is changing")
         } else if sender.state == .ended {
             
+            print("translation: \(translation)")
             if velocity.x > 0 {
+                
+                if translation.x > 50 {
+                    UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+                        self.cardImageView.transform = CGAffineTransform(translationX: self.cardImageView.center.x + 200, y: self.cardImageView.center.y)
+                    }, completion: nil)
+                } else if translation.x < 50 {
+                    UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+                        
+                    }, completion: nil)
+                } else {
+                    UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+                        self.cardImageView.transform = .identity
+                    }, completion: nil)
+                }
                 if location.y < cardInitialCenter.y {
                     cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(45 * Double.pi / 180))
                 } else {
