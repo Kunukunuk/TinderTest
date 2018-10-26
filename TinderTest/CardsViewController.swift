@@ -30,7 +30,7 @@ class CardsViewController: UIViewController {
         let velocity = sender.velocity(in: view)
         //let translation = sender.translation(in: view)
         
-        cardImageView.center = location
+        //cardImageView.center = location
         
         if sender.state == .began {
             print("Gesture began")
@@ -39,11 +39,17 @@ class CardsViewController: UIViewController {
         } else if sender.state == .ended {
             
             if velocity.x > 0 {
-                print("positive")
-                cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(45 * Double.pi / 180))
+                if location.y < cardInitialCenter.y {
+                    cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(45 * Double.pi / 180))
+                } else {
+                    cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(-45 * Double.pi / 180))
+                }
             } else {
-                print("negative")
-                cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(-45 * Double.pi / 180))
+                if location.y > cardInitialCenter.y {
+                    cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(45 * Double.pi / 180))
+                } else {
+                    cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(-45 * Double.pi / 180))
+                }
             }
             print("Gesture ended")
         }
