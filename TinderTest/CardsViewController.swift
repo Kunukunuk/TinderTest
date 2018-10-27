@@ -38,22 +38,7 @@ class CardsViewController: UIViewController {
             print("Gesture is changing")
         } else if sender.state == .ended {
             
-            print("translation: \(translation)")
             if velocity.x > 0 {
-                
-                if translation.x > 50 {
-                    UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-                        self.cardImageView.transform = CGAffineTransform(translationX: self.cardImageView.center.x + 200, y: self.cardImageView.center.y)
-                    }, completion: nil)
-                } else if translation.x < 50 {
-                    UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-                        self.cardImageView.transform = CGAffineTransform(translationX: self.cardImageView.center.x - 200, y: self.cardImageView.center.y)
-                    }, completion: nil)
-                } else {
-                    UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-                        self.cardImageView.transform = .identity
-                    }, completion: nil)
-                }
                 if location.y < cardInitialCenter.y {
                     cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(45 * Double.pi / 180))
                 } else {
@@ -71,6 +56,23 @@ class CardsViewController: UIViewController {
         
     }
     
+    func animateOffScreen(xValue: CGFloat) {
+        
+        if xValue > 50 {
+            UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+                self.cardImageView.transform = CGAffineTransform(translationX: self.cardImageView.center.x + 200, y: self.cardImageView.center.y)
+            }, completion: nil)
+        } else if xValue < 50 {
+            UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+                self.cardImageView.transform = CGAffineTransform(translationX: self.cardImageView.center.x - 200, y: self.cardImageView.center.y)
+            }, completion: nil)
+        } else {
+            UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+                self.cardImageView.transform = .identity
+            }, completion: nil)
+        }
+        
+    }
     
     @IBAction func buttonTap(_ sender: UIButton) {
     }
