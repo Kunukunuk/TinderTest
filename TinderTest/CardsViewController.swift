@@ -31,8 +31,19 @@ class CardsViewController: UIViewController {
         let translation = sender.translation(in: view)
 
         if sender.state == .began {
-            cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(4 * Double.pi / 180))
-            print("Gesture began ")
+            if translation.x > 0 {
+                if location.y < cardInitialCenter.y {
+                    cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(10 * Double.pi / 180))
+                } else {
+                    cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(-10 * Double.pi / 180))
+                }
+            } else {
+                if location.y < cardInitialCenter.y {
+                    cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(-10 * Double.pi / 180))
+                } else {
+                    cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(10 * Double.pi / 180))
+                }
+            }
         } else if sender.state == .changed {
             cardImageView.center = CGPoint(x: cardInitialCenter.x + translation.x, y: cardInitialCenter.y + translation.y)
             print("Gesture is changing")
