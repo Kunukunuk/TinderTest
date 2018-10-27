@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1F29442184139E00CBBD61 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F29432184139E00CBBD61 /* ProfileViewController.swift */; };
 		0D27339B218155F7004660A4 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D27339A218155F7004660A4 /* CardsViewController.swift */; };
 		0D33A811218001B000EB13A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D33A810218001B000EB13A8 /* AppDelegate.swift */; };
 		0D33A816218001B000EB13A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D33A814218001B000EB13A8 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D1F29432184139E00CBBD61 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0D27339A218155F7004660A4 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		0D33A80D218001B000EB13A8 /* TinderTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D33A810218001B000EB13A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				0D33A810218001B000EB13A8 /* AppDelegate.swift */,
 				0D27339A218155F7004660A4 /* CardsViewController.swift */,
+				0D1F29432184139E00CBBD61 /* ProfileViewController.swift */,
 				0D33A814218001B000EB13A8 /* Main.storyboard */,
 				0D33A817218001B100EB13A8 /* Assets.xcassets */,
 				0D33A819218001B100EB13A8 /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D1F29442184139E00CBBD61 /* ProfileViewController.swift in Sources */,
 				0D33A811218001B000EB13A8 /* AppDelegate.swift in Sources */,
 				0D27339B218155F7004660A4 /* CardsViewController.swift in Sources */,
 			);

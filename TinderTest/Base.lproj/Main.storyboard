@@ -46,6 +46,7 @@
                     <navigationItem key="navigationItem" title="Tinder" id="LBE-8B-PrO"/>
                     <connections>
                         <outlet property="cardImageView" destination="2BP-Sd-HtZ" id="uei-iD-HBy"/>
+                        <segue destination="Pt3-gm-Rfm" kind="presentation" identifier="profileview" id="V6Y-cB-pvr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -56,6 +57,38 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1104.8" y="-564.46776611694156"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="tAx-Td-nNx">
+            <objects>
+                <viewController id="Pt3-gm-Rfm" customClass="ProfileViewController" customModule="TinderTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VLW-T1-pqn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZAK-G9-PJb">
+                                <rect key="frame" x="0.0" y="25" width="375" height="333.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZAK-G9-PJb" firstAttribute="width" secondItem="VLW-T1-pqn" secondAttribute="width" id="7ac-Or-KzC"/>
+                            <constraint firstItem="ZAK-G9-PJb" firstAttribute="top" secondItem="F6d-kt-8Zh" secondAttribute="top" constant="5" id="Eyx-QY-Iho"/>
+                            <constraint firstItem="ZAK-G9-PJb" firstAttribute="height" secondItem="VLW-T1-pqn" secondAttribute="height" multiplier="1:2" id="Ja0-2z-3F0"/>
+                            <constraint firstItem="F6d-kt-8Zh" firstAttribute="trailing" secondItem="ZAK-G9-PJb" secondAttribute="trailing" id="Sv4-87-pQc"/>
+                            <constraint firstItem="F6d-kt-8Zh" firstAttribute="width" secondItem="VLW-T1-pqn" secondAttribute="width" id="bQ2-pm-3zf"/>
+                            <constraint firstItem="ZAK-G9-PJb" firstAttribute="leading" secondItem="F6d-kt-8Zh" secondAttribute="leading" id="frJ-0M-Qq2"/>
+                            <constraint firstItem="F6d-kt-8Zh" firstAttribute="height" secondItem="VLW-T1-pqn" secondAttribute="height" id="uSY-DG-m4l"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="F6d-kt-8Zh"/>
+                    </view>
+                    <connections>
+                        <outlet property="personImageView" destination="ZAK-G9-PJb" id="qMC-N6-onH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MJT-xR-sw6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2256.8000000000002" y="-564.46776611694156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F4p-rC-vUk">
