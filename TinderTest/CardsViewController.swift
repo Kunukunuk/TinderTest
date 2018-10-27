@@ -29,26 +29,27 @@ class CardsViewController: UIViewController {
         let location = sender.location(in: view)
         let velocity = sender.velocity(in: view)
         let translation = sender.translation(in: view)
-        
-        
+
         if sender.state == .began {
-            print("Gesture began")
+            cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(4 * Double.pi / 180))
+            print("Gesture began ")
         } else if sender.state == .changed {
-            cardImageView.center = location
+            cardImageView.center = CGPoint(x: cardInitialCenter.x + translation.x, y: cardInitialCenter.y + translation.y)
             print("Gesture is changing")
         } else if sender.state == .ended {
             
-            if velocity.x > 0 {
+            if translation.x > 0 {
                 if location.y < cardInitialCenter.y {
-                    cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(45 * Double.pi / 180))
+                    animateOffScreen(xValue: translation.x)
+                    //cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(45 * Double.pi / 180))
                 } else {
-                    cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(-45 * Double.pi / 180))
+                    //cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(-45 * Double.pi / 180))
                 }
             } else {
                 if location.y > cardInitialCenter.y {
-                    cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(45 * Double.pi / 180))
+                    //cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(45 * Double.pi / 180))
                 } else {
-                    cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(-45 * Double.pi / 180))
+                    //cardImageView.transform = cardImageView.transform.rotated(by: CGFloat(-45 * Double.pi / 180))
                 }
             }
             print("Gesture ended")
