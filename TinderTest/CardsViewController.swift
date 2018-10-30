@@ -60,9 +60,9 @@ class CardsViewController: UIViewController {
             UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
                 self.cardImageView.transform = CGAffineTransform(translationX: self.cardImageView.center.x + 200, y: self.cardImageView.center.y)
             }, completion: nil)
-        } else if xValue < 50 {
+        } else if xValue < 0 && xValue <= -50{
             UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-                self.cardImageView.transform = CGAffineTransform(translationX: self.cardImageView.center.x - 200, y: self.cardImageView.center.y)
+                self.cardImageView.transform = CGAffineTransform(translationX: self.cardImageView.center.x - 500, y: self.cardImageView.center.y)
             }, completion: nil)
         } else {
             UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
